@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/addressbook.css">
+    <link rel="stylesheet" href="css/lergeQR.css">
+    <link rel="stylesheet" href="css/sendinfo.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script src="components/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body onload="load()">
+  <!--headerメニュー-->
+   <header>
+     <p class="hstring">アドレスブック</p>
+     <button class="btn-menu"><i class="fas fa-ellipsis-v fa-2x"></i></button>
+     <button class="dustbox"><i class="fas fa-trash-alt" onclick="Delete()"></i></button>
+     <nav id="Slidemenu">
+        <ul>
+          <p class="infomation">アドレス登録<p>
+          <hr class="hrline" size="2" color="#FFFFFF">
+          <li ><a href="#" onclick="register()"><i class="far fa-clipboard"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;クリップボードを使う</span></a></li>
+          <li ><a href="#" onclick="scanBarcode3()" ><i class="fas fa-qrcode"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;QRリーダを使って登録</span></a></li>
+          <hr class="hrline" size="2" color="#FFFFFF">
+          <p class="infomation">送金メニュー<p>
+          <hr class="hrline" size="2" color="#FFFFFF">
+          <li ><a href="#" onclick="scanBarcode2()" ><i class="fas fa-qrcode"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;QRリーダを使って送金</span></a></li>
+        </ul>
+      </nav>
+   </header>
+   <table id="touch">
+     <thead>
+       <tr>
+         <th id="registname">&nbsp;Name</th>
+         <th id="Publickey">&nbsp;PublicKey</th>
+       </tr>
+     </thead>
+     <tbody id="listtable">
+       <tr>
+         <td class="registname">自分</td>
+         <td id="myPublickey"></td>
+       </tr>
+     </tbody>
+   </table>
+  <!--recievmenu-->
+  <nav id="navrecieve">
+    <ul>
+      <div id="lergeqr"></div>
+      <p id="publickey"></p>
+    </ul>
+  </nav>
+  <!--sendmenu-->
+  <nav id="navsend">
+    <ul>
+      <!--入力フォーム-->
+      <p class="showsend">送金情報</p>
+      <hr class="hrline" size="2" color="#FFFFFF">
+      <div class="sendinfomation">
+        <form id="inputform" name="scanresult">
+          <p class="input">送金先</p>
+          <textarea id="deistination" type="text" name="Destinationpubkey" placeholder="&nbsp;Destination PublicKey" ></textarea>
+          <p class="input">送金枚数</p>
+          <textarea id="amount" type="text" name="Amount" placeholder="&nbsp;amount" ></textarea>
+        </form>
+        <!--各種button-->
+        <div class="button">
+          <button id="clearbutton" type="button" onclick="clearinput()" name="Clear Input(消去)">Clear Input(消去)</button>
+          <button id="sendbutton" type="button" onclick="send()" value="Send(送金)">Send(送金)</button>
+        </div> 
+      </div>  
+    </ul>
+  </nav>
+  <footer id="footermenu">
+    <ul class="nav">
+        <li class="footerli"><a class="footerlink" href="./index.html"><div class="footeritem"><i class="fas fa-home fa-lg"></i><p class="receivetabstr">HOME</p></div></a></li>
+        <li class="footerli"><a class="footerlink recievebutton"><div class="footeritem1"><i class="fas fa-arrow-circle-down fa-lg"></i><p class="receivetabstr">受取</p></div></a></li>
+        <li class="footerli"><a class="footerlink sendbutton" ><div class="footeritem1"><i class="fas fa-arrow-circle-up fa-lg"></i><p class="receivetabstr">送信</p></div></a></li>
+        <li class="footerli"><a class="footerlink" href="./addressbook.html"><div class="footeritem1"><i class="fas fa-book"></i><p class="receivetabstr">宛先</p></div></a></li>
+    </ul>
+  </footer>
+    <!--メインスクリプト呼び出し-->
+  <script type="text/javascript" src="script/addressbook.js"></script>
+  <!--スライドメニューアニメーション用js-->
+  <script type="text/javascript" src="script/indexanimation.js"></script>
+  <!--QRスクリプト-->
+  <script type="text/javascript" src="script/qrcode.min.js"></script>
+  <script>
+      $('body').on('click','td',function()
+      {
+        
+         var publickey = $(this).closest('td')[0].innerText;
+         var num = publickey.length;
+         if(num > 15)
+         {
+            document.scanresult.Destinationpubkey.value = publickey;
+            var check1 = document.getElementsByClassName('open-sendmenu');
+            if(check1.length == 0){
+              sendnav.classList.toggle('open-sendmenu');
+            }
+            var check2 =  document.getElementsByClassName('open-menu');
+            var check3 = document.getElementsByClassName('open-recievemenu');
+            if(check2.length == 1){
+                nav.classList.toggle('open-menu');
+            }
+            if(check3.length == 1){
+                recievenav.classList.toggle('open-recievemenu');
+            }
+         }     
+      });
+  </script>
+</body>
+</html>

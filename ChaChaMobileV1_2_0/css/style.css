@@ -1,0 +1,605 @@
+/*back graund color*/
+body {
+  background-color:black;
+}
+/*サイドメニュー*/
+/* 基本装飾 */
+header {
+  background: rgba(51, 51, 51, 0.692);
+  padding: .1rem;
+  text-align: left;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+li {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 1.2rem;
+}
+/* ボタン */
+.btn-menu {
+  border: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  color: #fff;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+ 
+/* メニュー */
+#Slidemenu {
+  background: rgb(66, 65, 65);
+  position: absolute;
+  z-index: 1;
+  top: 3.125rem;
+  left: 0;
+  overflow-x: hidden;
+  width: 0;
+  transition: .5s; 
+}
+
+/* メニューを開いた時 */
+#Slidemenu.open-menu {
+  width:80%;
+}
+/*/サイドメニュー*/
+/*blanceの位置とフォント*/
+.Balance{
+  position: absolute;
+  margin-left: 40px;
+  top: 50px;
+}
+.balancebutton{
+  position: relative;
+  background-color:transparent; 
+  border: none;
+  margin-left: -20px;
+  width: 200px;
+  height: 100px;
+  font-size: 140%;
+
+}
+
+p.content1{
+  color: white;
+  line-height: 5px;
+  text-align: center;
+  font-size: 100%;
+}
+p.content2{
+  color: white;
+  line-height: 15px;
+  text-align: center;
+  font-size: 90%;
+}
+/*ここまでスライドメニュー*/
+/*recent transaction*/
+thead,tbody{
+  display: block;
+}
+
+tbody{
+  height: 370px;
+  width: 340px;
+  overflow-y: scroll;
+}
+
+#recent{
+  position: relative;
+  background-color: rgba(21,21,21);
+  color: white;
+  top:130px;
+  font-size: 115%;
+  text-align: left;
+  z-index: -1;
+}
+table tr:nth-child(even) td {
+	border-bottom: 1px solid white;
+}
+td{
+  height: 50px;
+  width: 340px;
+  
+}
+/*ここまでRecent Transaction*/
+/*ChaCha_img*/
+.option{
+  background-color: transparent;
+  border: none;
+  width: 100px;
+  height: 100px;
+  border-radius:100%; 
+}
+.ChaChaCoin{
+  position: absolute;
+  background-image: url(../ChaCha100100.png);
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+  top : 60px;
+  right : 10px;
+}
+
+/*new design*/
+
+.qrbutton{
+  border: none;
+  background: transparent;
+
+  margin-top: 5px;
+  font-size: 1.4rem;
+  color: #fff;
+  float: right;
+}
+
+#footermenu .nav{
+    position: fixed;
+    bottom: 0px;
+    margin-left: -8px;
+    margin-bottom: -3px;
+    width: 100%;
+    height:60px;
+    background-color: white; 
+    display: flex;
+    align-items: center;
+    justify-items:  left;
+    z-index: 10;
+}
+.nav{
+  margin-left: 10px;
+}
+.footerlink{
+  color: gray;
+}
+
+#footermenu .nav a:hover {
+    color: #ca353b;
+}
+.footeritem{
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 25px;
+  text-align: center;
+}
+.footeritem1{
+  margin-top: 5px;
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+}
+.receivetabstr{
+  line-height: 0px;
+  text-align: center;
+  font-size: 0.7em;
+}
+/**/
+
+/*new modal design*/
+/*navrecieve-------------------------------*/
+.recievebutton {
+  height: 60px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+#navrecieve {
+  background: rgba(51, 51, 51);
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 0px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  height: 0px;
+  transition: .5s; 
+}
+/* メニューを開いた時 */
+#navrecieve.open-recievemenu {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 450px;
+  left: 0px;
+  bottom: 50px;
+  animation: slideup 0.5s;
+}
+/*recievemenu------------------------------*/
+/*sendmenu---------------------------------*/
+.sendbutton{
+  height: 60px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+#navsend{
+  background: rgba(51, 51, 51);
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 0px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  height: 0px;
+  transition: .5s;
+}
+#navsend.open-sendmenu{
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 450px;
+  left: 0px;
+  bottom: 50px;
+  animation: slideup 0.5s;
+}
+/*-----------------------------------------*/
+@keyframes slideup{
+  from{
+    transform: translateY(450px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
+/**/
+
+
+/*IPad pro10.5Inch*/
+@media screen and (min-width:800px) {
+/*back graund color*/
+body {
+background-color:black;
+}
+/*サイドメニュー*/
+/* 基本装飾 */
+header {
+  background: rgba(51, 51, 51, 0.692);
+  padding: .1rem;
+  text-align: left;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+li {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 1.8rem;
+}
+/* ボタン */
+.btn-menu {
+  border: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  color: #fff;
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+ 
+/* メニュー */
+nav {
+  background: rgb(66, 65, 65);
+  position: absolute;
+  z-index: 1;
+  top: 3.125rem;
+  left: 0;
+  overflow-x: hidden;
+  width: 0;
+  transition: .5s; 
+}
+
+/* メニューを開いた時 */
+nav.open-menu {
+  width:50%;
+}
+/*/サイドメニュー*/
+/*blanceの位置とフォント*/
+.Balance{
+  position: absolute;
+  left: 120px;
+  top: 60px;
+}
+.balancebutton{
+  position: relative;
+  background-color:transparent; 
+  border: none;
+  margin-left: -20px;
+  width: 400px;
+  height: 200px;
+  font-size: 250%;
+
+}
+
+p.content1{
+  color: white;
+  line-height: 5px;
+  text-align: center;
+  font-size: 100%;
+}
+p.content2{
+  color: white;
+  line-height: 15px;
+  text-align: center;
+  font-size: 90%;
+}
+/*ここまでスライドメニュー*/
+/*showtransaction*/
+p.showtransaction{
+  position: relative;
+  color: white;
+  top:140px;
+  font-size: 250%;
+}
+#recent{
+  position: relative;
+  color: white;
+  top:100px;
+  font-size: 200%;
+  text-align: left;
+}
+td{
+  height: 40px;
+}
+#date{
+  width: 530px;
+
+}
+#amount{
+  width: 260px;
+}
+/*ここまでRecent Transaction*/
+/*ChaCha_img*/
+.option{
+  background-color: transparent;
+  border: none;
+  width: 180px;
+  height: 180px;
+  border-radius:100%; 
+}
+.ChaChaCoin{
+  position: absolute;
+  background-image: url(../ChaCha100100.png);
+  background-repeat: no-repeat;
+  background-size: 180px 180px;
+  top : 80px;
+  right : 30px;
+}
+
+/*new design*/
+.qrbutton{
+  border: none;
+  background: transparent;
+
+  margin-top: 5px;
+  font-size: 2.2rem;
+  color: #fff;
+  float: right;
+}
+#footermenu .nav{
+    position: fixed;
+    bottom: 0px;
+    margin-left: -8px;
+    margin-bottom: -3px;
+    width: 100%;
+    height:100px;
+    background-color: white; 
+    display: flex;
+    align-items: center;
+}
+.nav{
+  margin-left: 10px;
+}
+.footerli {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 1.2rem;
+}
+.footerlink {
+  color: gray;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 1.5em;
+}
+#footermenu .nav a:hover {
+    color: #ca353b;
+}
+.footeritem{
+  margin-top: 5px;
+  margin-left: 110px;
+  margin-right: 50px;
+  text-align: center;
+}
+.footeritem1{
+  margin-top: 5px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+.receivetabstr{
+  line-height: 0px;
+  text-align: center;
+  font-size: 1em;
+}
+/**/
+}
+/*ここまでIPad10.5Inch*/
+
+
+
+
+/*IPad pro12.9Inch*/
+@media screen and (min-width:1020px) {
+/*back graund color*/
+body {
+background-color:black;
+}
+/*サイドメニュー*/
+/* 基本装飾 */
+header {
+  background: rgba(51, 51, 51, 0.692);
+  padding: .1rem;
+  text-align: left;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+li {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 2.4rem;
+}
+/* ボタン */
+.btn-menu {
+  border: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  color: #fff;
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+ 
+/* メニュー */
+nav {
+  background: rgb(66, 65, 65);
+  position: absolute;
+  z-index: 1;
+  top: 3.125rem;
+  left: 0;
+  overflow-x: hidden;
+  width: 0;
+  transition: .5s; 
+}
+
+/* メニューを開いた時 */
+nav.open-menu {
+  width:50%;
+}
+/*/サイドメニュー*/
+/*blanceの位置とフォント*/
+.Balance{
+  position: absolute;
+  left: 120px;
+  top: 60px;
+}
+.balancebutton{
+  position: relative;
+  background-color:transparent; 
+  border: none;
+  margin-left: -20px;
+  width: 400px;
+  height: 200px;
+  font-size: 250%;
+
+}
+
+p.content1{
+  color: white;
+  line-height: 5px;
+  text-align: center;
+  font-size: 100%;
+}
+p.content2{
+  color: white;
+  line-height: 15px;
+  text-align: center;
+  font-size: 90%;
+}
+/*ここまでスライドメニュー*/
+/*showtransaction*/
+p.showtransaction{
+  position: relative;
+  color: white;
+  top:160px;
+  font-size: 250%;
+}
+#recent{
+  position: relative;
+  color: white;
+  top:120px;
+  font-size: 200%;
+  text-align: left;
+}
+td{
+  height: 40px;
+}
+#date{
+  width: 630px;
+
+}
+#amount{
+  width: 360px;
+}
+/*ここまでRecent Transaction*/
+/*ChaCha_img*/
+.option{
+  background-color: transparent;
+  border: none;
+  width: 200px;
+  height: 200px;
+  border-radius:100%; 
+}
+.ChaChaCoin{
+  position: absolute;
+  background-image: url(../ChaCha100100.png);
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  top : 80px;
+  right : 30px;
+}
+#footermenu .nav{
+    position: fixed;
+    bottom: 0px;
+    margin-left: -8px;
+    margin-bottom: -3px;
+    width: 100%;
+    height:120px;
+    background-color: white; 
+    display: flex;
+    align-items: center;
+}
+.nav{
+  margin-left: 10px;
+}
+.footerli {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 1.4rem;
+}
+.footerlink {
+  color: gray;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 1.5em;
+}
+#footermenu .nav a:hover {
+    color: #ca353b;
+}
+.footeritem{
+  margin-top: 5px;
+  margin-left: 150px;
+  margin-right: 55px;
+  text-align: center;
+}
+.footeritem1{
+  margin-top: 5px;
+  margin-left: 55px;
+  margin-right: 55px;
+  text-align: center;
+}
+.receivetabstr{
+  line-height: 0px;
+  text-align: center;
+  font-size: 1em;
+}
+/**/
+}
+/*ここまでIPad12.9Inch*/

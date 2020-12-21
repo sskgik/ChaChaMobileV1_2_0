@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lergeQR.css">
+  <link rel="stylesheet" href="css/sendinfo.css">
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <!--<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.7/pwacompat.min.js"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>ChaChaMobile</title>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function (err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+  </script>
+</head>
+
+<body onload="showasset()">
+  <!--sidemenu-->
+  <header>
+    <button class="btn-menu"><i class="fas fa-bars fa-lg"></i></button>
+    <button class="qrbutton" type="button" onclick="scanBarcode2()" name="qrreaderbottun"><i class="fas fa-qrcode fa-lg"></i></button>
+      <nav id="Slidemenu">
+        <ul>
+          <li ><a href="#" onclick=""><i class="far fa-id-card"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;デジタルトレカを買う</span></a></li>
+          <li ><a href="#" onclick=""><i class="fas fa-ticket-alt"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ライブチケットを買う</span></a></li>
+          <li ><a href="#" onclick="chachacoin()"><i class="fas fa-question"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;チャチャについて</span></a></li>
+          <li ><a href="#" onclick="contact()"><i class="fas fa-phone"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;お問い合わせ</span></a></li>
+          <li ><a href="#" onclick="manual()"><i class="fas fa-blog"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;アプリの使い方</span></a></li>
+          <li ><a href="#" onclick="showprivatekey()"><i class="fas fa-key"></i><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;プライベートキー</span></a></li>
+        </ul>
+      </nav>
+  </header>
+  <!--Balance-->
+  <div class="Balance">
+    <button class="balancebutton" type="button" onclick="get_balance()" name="qrreaderbottun">
+    <p class="content1">Your_Balance</p>
+    <p class="content2" id="content2" >&nbsp;</p>
+    <p class="content1">ChaChaCoin</p>  
+    </button>
+  </div>
+  <!--Recrnt Table-->  
+  <table id="recent">
+     <thead>
+       <tr><th>Recent&nbsp;&nbsp;Transaction</th></tr> 
+     </thead>
+     <tbody id="recentTable">
+     </tbody>
+   </table>
+  <!--logomark-->
+  <div class="ChaChaCoin">
+  <button class="option" type="button" onclick="backoption()" name="オプションボタン"></button>
+  </div>
+  <!--recievmenu-->
+  <nav id="navrecieve">
+    <ul>
+      <div id="lergeqr"></div>
+      <p id="publickey"></p>
+    </ul>
+  </nav>
+  <!--sendmenu-->
+  <nav id="navsend">
+    <ul>
+      <!--入力フォーム-->
+      <p class="showsend">送金情報</p>
+      <hr class="hrline" size="2" color="#FFFFFF">
+      <div class="sendinfomation">
+        <form id="inputform" name="scanresult">
+          <p class="input">送金先</p>
+          <textarea id="deistination" type="text" name="Destinationpubkey" placeholder="&nbsp;Destination PublicKey" ></textarea>
+          <p class="input">送金枚数</p>
+          <textarea id="amount" type="text" name="Amount" placeholder="&nbsp;amount" ></textarea>
+        </form>
+        <!--各種button-->
+        <div class="button">
+          <button id="clearbutton" type="button" onclick="clearinput()" name="Clear Input(消去)">Clear Input(消去)</button>
+          <button id="sendbutton" type="button" onclick="send()" value="Send(送金)">Send(送金)</button>
+        </div> 
+      </div>  
+    </ul>
+  </nav>
+  <footer id="footermenu">
+    <ul class="nav">
+        <li class="footerli"><a class="footerlink" href="./index.html"><div class="footeritem"><i class="fas fa-home fa-lg"></i><p class="receivetabstr">HOME</p></div></a></li>
+        <li class="footerli"><a class="footerlink recievebutton"><div class="footeritem1"><i class="fas fa-arrow-circle-down fa-lg"></i><p class="receivetabstr">受取</p></div></a></li>
+        <li class="footerli"><a class="footerlink sendbutton" ><div class="footeritem1"><i class="fas fa-arrow-circle-up fa-lg"></i><p class="receivetabstr">送信</p></div></a></li>
+        <li class="footerli"><a class="footerlink" href="./addressbook.html"><div class="footeritem1"><i class="fas fa-book"></i><p class="receivetabstr">宛先</p></div></a></li>
+    </ul>
+  </footer>
+<!--サイドメニュースクリプト-->
+ <script type="text/javascript" src="script/main.js"></script>
+ <!--スライドメニューアニメーション用js-->
+ <script type="text/javascript" src="script/indexanimation.js"></script>
+ <!--QRスクリプト-->
+ <script type="text/javascript" src="script/qrcode.min.js"></script>
+</body>
+</html>

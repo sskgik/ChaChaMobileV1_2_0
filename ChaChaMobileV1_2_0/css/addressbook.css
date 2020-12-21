@@ -1,0 +1,616 @@
+/*back graund color*/
+body {
+background-color:black;
+}
+/*headerメニュー*/
+header {
+  background: rgba(51, 51, 51, 0.692);
+  padding: .1rem;
+  text-align: left;
+  height: 40px;
+}
+/*header文字*/
+p.hstring{
+  display: inline-block;
+  color: yellow;
+  font-size: 1.8em;
+  margin: auto;
+}
+/*Backpageボタン*/
+.backbutton{
+  border: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  color: #fff;
+  padding: .5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+li {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 1rem;
+}
+
+/*右端のボタン*/
+.btn-menu{
+  border: none;
+  background: transparent;
+  padding: .5rem 1rem;
+  line-height: 1;
+  color: #fff;
+  font-size: 0.7rem;
+  float: right;
+}
+.dustbox{
+  border: none;
+  background: transparent;
+  padding: .5rem 1rem;
+  line-height: 1;
+  color: #fff;
+  font-size: 1.2rem;
+  float: right;
+}
+/* メニュー */
+.infomation{
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-left: -30px;
+  white-space: nowrap;
+}
+#Slidemenu {
+  background: rgb(66, 65, 65);
+  position: absolute;
+  z-index: 1;
+  top: 3.125rem;
+  right: 0;
+  overflow-x: hidden;
+  text-align: left;
+  width: 0;
+  transition: .5s; 
+}
+/* メニューを開いた時 */
+#Slidemenu.open-menu {
+  width:80%;
+}
+/*アドレススクロールリスト(ここから下)*/
+thead,tbody{
+  display:block;
+  word-break: break-all;
+}
+tbody{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 500px; 
+}
+/*フォントカラー*/
+th,td{
+  color: white;
+  text-align: left;
+  font-size: 110%;
+}
+
+#registname{
+  height: 40px;
+  width: 90px;
+}
+#Publickey{
+  height: 40px;
+  width: 230px;
+}
+
+.registname{
+  height: 40px;
+  width: 90px;
+}
+#myPublickey{
+  height: 40px;
+  width: 230px;
+  
+}
+table, td{
+    border: none;
+    border-bottom: 1px solid white;
+}
+/*ここまでがtable表*/
+/*ここからがchoice項目*/
+.choicearea{
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 65px;
+  text-align: center;
+}
+#numchoice{
+  position: releative;
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 2.2em;
+  text-align: center;
+  vertical-align: middle;
+}
+.tosend{
+  position: relative;
+  width: 165px;
+  height: 40px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-right:auto; 
+  background-color:greenyellow;
+  text-align: center;
+  border: none;
+  border-radius:10px;
+}
+/*new design*/
+#footermenu .nav{
+    position: fixed;
+    bottom: 0px;
+    margin-left: -8px;
+    margin-bottom: -3px;
+    width: 100%;
+    height:60px;
+    background-color: white; 
+    display: flex;
+    align-items: center;
+    justify-items:  left;
+    z-index: 10;
+}
+.nav{
+  margin-left: 10px;
+}
+li {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 1.2rem;
+}
+.footerlink {
+  color: gray;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#footermenu .nav a:hover {
+    color: #ca353b;
+}
+.footeritem{
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 25px;
+  text-align: center;
+}
+.footeritem1{
+  margin-top: 5px;
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+}
+.receivetabstr{
+  line-height: 0px;
+  text-align: center;
+  font-size: 0.7em;
+}
+/*new*/
+/*new modal design*/
+/*navrecieve-------------------------------*/
+.recievebutton {
+  height: 60px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+#navrecieve {
+  background: rgba(51, 51, 51);
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 0px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  height: 0px;
+  transition: .5s; 
+}
+/* メニューを開いた時 */
+#navrecieve.open-recievemenu {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 450px;
+  left: 0px;
+  bottom: 50px;
+  animation: slideup 0.5s;
+}
+/*recievemenu------------------------------*/
+/*sendmenu---------------------------------*/
+.sendbutton{
+  height: 60px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+#navsend{
+  background: rgba(51, 51, 51);
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 0px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  height: 0px;
+  transition: .5s;
+}
+#navsend.open-sendmenu{
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 450px;
+  left: 0px;
+  bottom: 50px;
+  animation: slideup 0.5s;
+}
+/*-----------------------------------------*/
+@keyframes slideup{
+  from{
+    transform: translateY(450px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
+/**/
+
+
+/*ここからIpad10.5デザイン*/
+@media screen and (min-width:800px) {
+   /*back graund color*/
+body {
+background-color:black;
+}
+/*headerメニュー*/
+header {
+  background: rgba(51, 51, 51, 0.692);
+  padding: .1rem;
+  text-align: left;
+  height: 60px;
+}
+/*header文字*/
+p.hstring{
+  display: inline-block;
+  color: yellow;
+  font-size: 2rem;
+  margin: auto;
+}
+/*Backpageボタン*/
+.backbutton{
+  border: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  color: #fff;
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+li {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 2rem;
+}
+
+/*右端のボタン*/
+.btn-menu{
+  border: none;
+  background: transparent;
+  padding: .5rem 1rem;
+  line-height: 1;
+  color: #fff;
+  font-size: 1.1rem;
+  float: right;
+}
+.dustbox{
+  border: none;
+  background: transparent;
+  padding: .5rem 1rem;
+  line-height: 1;
+  color: #fff;
+  font-size: 2rem;
+  float: right;
+}
+/* メニュー */
+nav {
+  background: rgb(66, 65, 65);
+  position: absolute;
+  z-index: 1;
+  top: 3.125rem;
+  right: 0;
+  overflow-x: hidden;
+  text-align: left;
+  width: 0;
+  transition: .5s; 
+}
+/* メニューを開いた時 */
+nav.open-menu {
+  width:60%;
+}
+/*アドレススクロールリスト(ここから下)*/
+thead,tbody{
+  display:block;
+  word-break: break-all;
+}
+tbody{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 820px; 
+}
+/*フォントカラー*/
+th,td{
+  color: white;
+  text-align: left;
+  font-size: 140%;
+}
+#num{
+  color: transparent;
+  width: 100px;
+}
+#registname{
+  height: 100px;
+  width: 200px;
+}
+#Publickey{
+  height: 100px;
+  width: 550px;
+}
+.num{
+  height: 100px;
+  width: 100px;
+}
+.registname{
+  height: 100px;
+  width: 200px;
+}
+#myPublickey{
+  height: 100px;
+  width: 550px;
+  
+}
+table, td{
+    border: none;
+    border-bottom: 1px solid white;
+}
+/*ここまでがtable表*/
+
+/*new design*/
+#footermenu .nav{
+    position: fixed;
+    bottom: 0px;
+    margin-left: -8px;
+    margin-bottom: -3px;
+    width: 100%;
+    height:100px;
+    background-color: white; 
+    display: flex;
+    align-items: center;
+}
+.nav{
+  margin-left: 10px;
+}
+.footerli {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 1.2rem;
+}
+.footerlink {
+  color: gray;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 1.5em;
+}
+#footermenu .nav a:hover {
+    color: #ca353b;
+}
+.footeritem{
+  margin-top: 5px;
+  margin-left: 110px;
+  margin-right: 50px;
+  text-align: center;
+}
+.footeritem1{
+  margin-top: 5px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+.receivetabstr{
+  line-height: 0px;
+  text-align: center;
+  font-size: 1em;
+}
+/**/
+}
+
+
+
+
+/*ここからIpad12.9デザイン*/
+@media screen and (min-width:1020px) {
+   /*back graund color*/
+body {
+background-color:black
+}
+/*headerメニュー*/
+header {
+  background: rgba(51, 51, 51, 0.692);
+  padding: .1rem;
+  text-align: left;
+}
+/*header文字*/
+p.hstring{
+  display: inline-block;
+  color: yellow;
+  font-size: 2rem;
+  margin: auto;
+}
+/*Backpageボタン*/
+.backbutton{
+  border: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  color: #fff;
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+li {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 2rem;
+}
+
+/*右端のボタン*/
+.btn-menu{
+  border: none;
+  background: transparent;
+  padding: .5rem 1rem;
+  line-height: 1;
+  color: #fff;
+  font-size: 1.1rem;
+  float: right;
+}
+.dustbox{
+  border: none;
+  background: transparent;
+  padding: .5rem 1rem;
+  line-height: 1;
+  color: #fff;
+  font-size: 2rem;
+  float: right;
+}
+/* メニュー */
+nav {
+  background: rgb(66, 65, 65);
+  position: absolute;
+  z-index: 1;
+  top: 3.125rem;
+  right: 0;
+  overflow-x: hidden;
+  text-align: left;
+  width: 0;
+  transition: .5s; 
+}
+/* メニューを開いた時 */
+nav.open-menu {
+  width:60%;
+}
+/*アドレススクロールリスト(ここから下)*/
+thead,tbody{
+  display:block;
+  word-break: break-all;
+}
+tbody{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 1050px; 
+}
+/*フォントカラー*/
+th,td{
+  color: white;
+  text-align: left;
+  font-size: 160%;
+}
+#num{
+  color: transparent;
+  width: 100px;
+}
+#registname{
+  height: 100px;
+  width: 250px;
+}
+#Publickey{
+  height: 100px;
+  width: 650px;
+}
+.num{
+  height: 100px;
+  width: 100px;
+}
+.registname{
+  height: 100px;
+  width: 250px;
+}
+#myPublickey{
+  height: 100px;
+  width: 650px;
+  
+}
+table, td{
+    border: none;
+    border-bottom: 1px solid white;
+}
+/*ここまでがtable表*/
+#footermenu .nav{
+    position: fixed;
+    bottom: 0px;
+    margin-left: -8px;
+    margin-bottom: -3px;
+    width: 100%;
+    height:120px;
+    background-color: white; 
+    display: flex;
+    align-items: center;
+}
+.nav{
+  margin-left: 10px;
+}
+.footerli {
+  margin: 1rem 0;
+  list-style: none;
+  font-size: 1.4rem;
+}
+.footerlink {
+  color: gray;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 1.5em;
+}
+#footermenu .nav a:hover {
+    color: #ca353b;
+}
+.footeritem{
+  margin-top: 5px;
+  margin-left: 150px;
+  margin-right: 55px;
+  text-align: center;
+}
+.footeritem1{
+  margin-top: 5px;
+  margin-left: 55px;
+  margin-right: 55px;
+  text-align: center;
+}
+.receivetabstr{
+  line-height: 0px;
+  text-align: center;
+  font-size: 1em;
+}
+/**/
+
+}

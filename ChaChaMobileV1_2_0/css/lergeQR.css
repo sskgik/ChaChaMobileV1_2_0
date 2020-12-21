@@ -1,0 +1,75 @@
+
+/*QR*/
+#lergeqr{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  border: 4px solid;
+  border-color: #ffffff;
+}
+
+/*new design*/
+#publickey{
+  position: absolute;
+  top: 25px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 0.57em;
+}
+
+/*ここからIpad10.5デザイン*/
+@media screen and (min-width:800px) {
+
+
+/*QR*/
+#lergeqr{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  border: 4px solid;
+  border-color: #ffffff;
+}
+
+/*new design*/
+#publickey{
+  position: absolute;
+  top: 800px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+}
+}
+
+/*ここからIpad12.9デザイン*/
+@media screen and (min-width:1020px) {
+/*back graund color*/
+
+/*QR*/
+#lergeqr{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  border: 4px solid;
+  border-color: #ffffff;
+}
+/*new design*/
+#publickey{
+  position: relative;
+  top: 900px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.4em;
+}
+}
